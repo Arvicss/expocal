@@ -3,24 +3,39 @@ import "./App.css";
 import { MaxWidthWrapper } from "./components/ui/max-width-wrapper";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader } from "./components/ui/card";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { calculatorKey } from "./lib/constant";
 import { Input } from "./components/ui/input";
+import { solution } from "./types";
+import { getExponentiation } from "./functions/exponentiation";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const [result, setResult] = useState<solution | null>(null);
 
   const addInput = (value: string) => {
+    if (value === "^" && inputRef.current!.value.includes("^")) 
+      return (inputRef.current!.value)
+    
     return (inputRef.current!.value += value);
   };
 
   const removeInput = () => {
+    setResult(null);
     return (inputRef.current!.value = inputRef.current!.value.slice(0, -1));
   };
 
   const clearInput = () => {
+    setResult(null);
     return (inputRef.current!.value = "");
   };
+
+  const calculate = () => {
+    if (inputRef.current?.value === "") return;
+    const equation = inputRef.current?.value.split('^');
+    setResult(getExponentiation(parseInt(equation?.at(0) ?? ''), parseInt(equation?.at(1) ?? '')));
+    console.log(result)
+  }
 
   useEffect(() => {
     const keyDownHandler = (event: KeyboardEvent) => {
@@ -135,7 +150,7 @@ function App() {
               <Button className="col-span-1" onClick={() => addInput("^")}>
                 <ChevronUp />
               </Button>
-              <Button className="col-span-1">
+              <Button className="col-span-1" onClick={() => calculate()}>
                 <Equal />
               </Button>
             </CardContent>
