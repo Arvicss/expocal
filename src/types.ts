@@ -4,6 +4,7 @@ export type expressions = {
 }
 
 export type solution = {
+  answer: string,
   equation: string,
   result: number
   expressions: expressions[],
