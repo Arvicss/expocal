@@ -1,18 +1,18 @@
 import {
-	Table,
-	TableBody,
-	TableCell,
-	TableFooter,
-	TableRow
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableRow,
 } from "@/components/ui/table";
 import { DataContext } from "@/context/DataContext";
 import { MathJax } from "better-react-mathjax";
 import { Info } from "lucide-react";
 import { useContext } from "react";
 import {
-	HoverCard,
-	HoverCardContent,
-	HoverCardTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 } from "../ui/hover-card";
 
 export const Solution = () => {
@@ -23,7 +23,6 @@ export const Solution = () => {
       <Table>
         {solution !== null ? (
           <>
-            
             <TableBody>
               {solution?.expressions.map((expression, index) => (
                 <TableRow key={index}>
@@ -35,7 +34,7 @@ export const Solution = () => {
                   </TableCell>
                   <TableCell className="text-center border" width={10}>
                     {
-                      <HoverCard>
+                      <HoverCard openDelay={20} closeDelay={20}>
                         <HoverCardTrigger className="text-center">
                           <Info />
                         </HoverCardTrigger>
@@ -48,7 +47,7 @@ export const Solution = () => {
                 </TableRow>
               ))}
             </TableBody>
-						<TableFooter>
+            <TableFooter>
               <TableRow>
                 <TableCell className="text-center border">
                   <MathJax>{`\\({Answer:} \\)`}</MathJax>
