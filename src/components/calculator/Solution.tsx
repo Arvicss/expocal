@@ -9,11 +9,7 @@ import { DataContext } from "@/context/DataContext";
 import { MathJax } from "better-react-mathjax";
 import { Info } from "lucide-react";
 import { useContext } from "react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "../ui/hover-card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 export const Solution = () => {
   const { solution } = useContext(DataContext);
@@ -34,14 +30,16 @@ export const Solution = () => {
                   </TableCell>
                   <TableCell className="text-center border" width={10}>
                     {
-                      <HoverCard openDelay={20} closeDelay={20}>
-                        <HoverCardTrigger className="text-center">
-                          <Info />
-                        </HoverCardTrigger>
-                        <HoverCardContent className="w-100">
-                          <MathJax>{expression.formulaUsed}</MathJax>
-                        </HoverCardContent>
-                      </HoverCard>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <Info />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <MathJax>{expression.formulaUsed}</MathJax>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     }
                   </TableCell>
                 </TableRow>
@@ -57,14 +55,16 @@ export const Solution = () => {
                 </TableCell>
                 <TableCell className="text-center border" width={10}>
                   {
-                    <HoverCard>
-                      <HoverCardTrigger className="text-center">
-                        <Info />
-                      </HoverCardTrigger>
-                      <HoverCardContent className="w-100">
-                        <MathJax>{`\\({Multiplication} \\ {Count: } \\ ${solution?.multiplicationCount} \\)`}</MathJax>
-                      </HoverCardContent>
-                    </HoverCard>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Info />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <MathJax>{`\\({Multiplication} \\ {Count: } \\ ${solution?.multiplicationCount} \\)`}</MathJax>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   }
                 </TableCell>
               </TableRow>
@@ -73,11 +73,13 @@ export const Solution = () => {
         ) : null}
 
         {solution === null ? (
-          <TableRow>
-            <TableCell className="text-center border" colSpan={3}>
-              <MathJax>{`\\({Enter} \\ {a} \\ {exponential} \\ {expression} \\ {to} \\ {solve...} \\)`}</MathJax>
-            </TableCell>
-          </TableRow>
+          <TableBody>
+            <TableRow>
+              <TableCell className="text-center border" colSpan={3}>
+                <MathJax>{`\\({Enter} \\ {a} \\ {exponential} \\ {expression} \\ {to} \\ {solve...} \\)`}</MathJax>
+              </TableCell>
+            </TableRow>
+          </TableBody>
         ) : null}
       </Table>
     </div>

@@ -9,7 +9,7 @@ function App() {
     <div className="flex flex-col h-screen w-screen overflow-x-hidden">
       <NavBar />
       <div className="flex-1 flex justify-center">
-        <div className="w-1/3 h-1/2 mt-20">
+        <div className="w-90 sm:w-1/3 h-1/2  my-20 ">
           <DataProvider>
             <MathJaxContext>
               <Solution />

@@ -2,11 +2,11 @@ import { DataContext } from "@/context/DataContext";
 import { getExponentiation } from "@/functions/exponentiation";
 import { calculatorKey } from "@/lib/constant";
 import { cn } from "@/lib/utils";
-import { useContext, useEffect, useRef } from "react";
 import { ChevronUp, Delete, Dot, Equal } from "lucide-react";
-import { Input } from "../ui/input";
+import { useContext, useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader } from "../ui/card";
+import { Input } from "../ui/input";
 
 type calculatorProps = {
 	className?: string;
@@ -37,7 +37,7 @@ export const Calculator = ({ className } : calculatorProps) => {
     if (inputRef.current?.value === "" || !inputRef.current!.value.includes("^")) return;
     const equation = inputRef.current?.value.split('^');
 		if (!equation?.at(0) || !equation?.at(1)) return;
-		setSolution!(getExponentiation(parseInt(equation?.at(0) ?? ''), parseInt(equation?.at(1) ?? '')));
+		setSolution!(getExponentiation(parseFloat(equation?.at(0) ?? ''), parseInt(equation?.at(1) ?? '')));
   }
 
   useEffect(() => {
