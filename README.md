@@ -8,7 +8,6 @@ Expocal is a web application designed to quickly and accurately calculate expone
 - **Simple Interface**: The user interface is straightforward and easy to use, making it accessible for users of all levels.
 - **Single Expression Calculation**: Expocal is currently limited to the computation of one exponential expression at a time.
 - **Web-based**: Access Expocal directly from your web browser without any installation required.
-- **Output Link**: View your calculation results directly through the provided output link.
 
 ## Usage
 
