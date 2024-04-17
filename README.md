@@ -23,7 +23,7 @@ Expocal is a web application designed to quickly and accurately calculate expone
 - [Shadcn/ui:](https://ui.shadcn.com/) A collection of beautifully designed, accessible, and customizable React components.
 - [MathJax:](https://www.npmjs.com/package/better-react-mathjax) Up-to-date component for using MathJax in latest React (using functional components and hooks API).
 
-## Project Members
+## Project Members - 2BSCS-1
 
 - Arvyx Ramos
 - John Victor Gonzales
