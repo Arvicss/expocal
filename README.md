@@ -16,6 +16,12 @@ Expocal is a web application designed to quickly and accurately calculate expone
 3. Click the "=" button to compute the result.
 4. View the output directly on the webpage.
 
+## Project Members
+
+### Luis Joshua Bulatao
+### John Victor Gonzales
+### Arvyx Ramos
+
 ## Development Frameworks and Libraries:
 
 - [React:](https://react.dev/) A JavaScript library for building user interfaces, widely used in web development.
