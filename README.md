@@ -16,15 +16,15 @@ Expocal is a web application designed to quickly and accurately calculate expone
 3. Click the "=" button to compute the result.
 4. View the output directly on the webpage.
 
-## Project Members
-
-### Luis Joshua Bulatao
-### John Victor Gonzales
-### Arvyx Ramos
-
 ## Development Frameworks and Libraries:
 
 - [React:](https://react.dev/) A JavaScript library for building user interfaces, widely used in web development.
 - [Tailwind CSS:](https://tailwindcss.com) A utility-first CSS framework for building custom designs quickly and maintaining a scalable CSS architecture.
 - [Shadcn/ui:](https://ui.shadcn.com/) A collection of beautifully designed, accessible, and customizable React components.
 - [MathJax:](https://www.npmjs.com/package/better-react-mathjax) Up-to-date component for using MathJax in latest React (using functional components and hooks API).
+
+## Project Members
+
+- Arvyx Ramos
+- John Victor Gonzales
+- Luis Joshua Bulatao
